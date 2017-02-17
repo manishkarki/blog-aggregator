@@ -7,15 +7,17 @@ import org.springframework.stereotype.Service;
 
 import com.manish.blogaggregator.entity.User;
 import com.manish.blogaggregator.repository.UserRepository;
+
 @Service
 public class UserService {
 	@Autowired
 	private UserRepository userRepository;
-public List<User> findAll(){
-	return userRepository.findAll();
-}
-public User findOne(int id) {
-	// TODO Auto-generated method stub
-	return userRepository.findOne(id);
-}
+
+	public List<User> findAll() {
+		return userRepository.findAll();
+	}
+
+	public User findOne(int id) {
+		return userRepository.findOne(id);
+	}
 }
