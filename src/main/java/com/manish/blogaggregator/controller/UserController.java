@@ -10,18 +10,18 @@ import com.manish.blogaggregator.service.UserService;
 
 @Controller
 public class UserController {
-@Autowired
-private UserService userService;
+	@Autowired
+	private UserService userService;
 
-@RequestMapping(value="/users")
-public String users(Model model){
-	model.addAttribute("users", userService.findAll());
-	return "users";
-}
+	@RequestMapping(value = "/users")
+	public String users(Model model) {
+		model.addAttribute("users", userService.findAll());
+		return "users";
+	}
 
-@RequestMapping("/users/{id}")
-public String detail(Model model,@PathVariable int id){
-	model.addAttribute("user", userService.findOne(id));
-	return "user-detail";
-}
+	@RequestMapping("/users/{id}")
+	public String detail(Model model, @PathVariable int id) {
+		model.addAttribute("user", userService.findOne(id));
+		return "user-detail";
+	}
 }
